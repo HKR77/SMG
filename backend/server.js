@@ -119,6 +119,8 @@ app.put('/update-enquiry-status/:id', authenticateToken, async (req, res) => {
   }
 });
 
+app.get('/', (req, res)=>res.send('backend is up and running successfully.'))
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
