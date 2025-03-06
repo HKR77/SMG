@@ -121,6 +121,7 @@ app.put('/update-enquiry-status/:id', authenticateToken, async (req, res) => {
   }
 });
 
+app.get('/anya', (req, res)=>res.send('backend & is up and running successfully.'))
 app.get('/', (req, res)=>res.send('backend is up and running successfully.'))
 
 const PORT = process.env.PORT || 5000;
