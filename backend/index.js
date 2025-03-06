@@ -42,6 +42,8 @@ const transporter = nodemailer.createTransport({
 app.post('/submit-enquiry', async (req, res) => {
   try {
     const { name, mobile, email, premises, location, message } = req.body;
+    console.log(name, mobile, email, premises, location, message);
+    
 
     // Save to MongoDB
     const newEnquiry = new Enquiry({ name, mobile, email, premises, location, message });

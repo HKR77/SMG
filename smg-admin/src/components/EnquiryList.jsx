@@ -14,7 +14,7 @@ function EnquiryList({ onLogout, token }) {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get("http://localhost:5000/enquiries", {
+      const response = await axios.get("https://smg-livid.vercel.app/enquiries", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setEnquiries(response.data);
@@ -32,7 +32,7 @@ function EnquiryList({ onLogout, token }) {
   const updateStatus = async (id, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/update-enquiry-status/${id}`,
+        `https://smg-livid.vercel.app/update-enquiry-status/${id}`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       );

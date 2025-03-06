@@ -31,7 +31,7 @@ const PopUpEnquaryForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/submit-enquiry', {
+      const response = await fetch('https://smg-livid.vercel.app/submit-enquiry', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
