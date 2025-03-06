@@ -46,9 +46,7 @@ app.post('/submit-enquiry', async (req, res) => {
   console.log("Submit enquiry route called");
 
   try {
-    const { name, mobile, email, premises, location, message } = req.body;
-    // console.log(name, mobile, email, premises, location, message);
-    
+    const { name, mobile, email, premises, location, message } = req.body;    
 
     // Save to MongoDB
     const newEnquiry = new Enquiry({ name, mobile, email, premises, location, message });
