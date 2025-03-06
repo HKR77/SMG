@@ -43,7 +43,7 @@ const transporter = nodemailer.createTransport({
 
 // Enquiry Submission Route
 app.post('/submit-enquiry', async (req, res) => {
-  console.log("Submit enquiry route called");
+  // console.log("Submit enquiry route called");
 
   try {
     const { name, mobile, email, premises, location, message } = req.body;    
@@ -71,7 +71,7 @@ app.post('/submit-enquiry', async (req, res) => {
 
 // Login Route (Hardcoded Credentials)
 app.post('/login', (req, res) => {
-  console.log("Login route called");
+  // console.log("Login route called");
 
   const { username, password } = req.body;
 
@@ -98,7 +98,7 @@ const authenticateToken = (req, res, next) => {
 
 // Get All Enquiries Route (Protected)
 app.get('/enquiries', authenticateToken, async (req, res) => {
-  console.log("Enquiries route called");
+  // console.log("Enquiries route called");
   try {
     const enquiries = await Enquiry.find();
     res.status(200).json(enquiries);
@@ -110,7 +110,7 @@ app.get('/enquiries', authenticateToken, async (req, res) => {
 
 // Admin Route to Update Enquiry Status (Protected)
 app.put('/update-enquiry-status/:id', authenticateToken, async (req, res) => {
-  console.log("update enquiry route called");
+  // console.log("update enquiry route called");
 
   try {
     const { id } = req.params;
