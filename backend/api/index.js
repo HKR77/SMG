@@ -40,9 +40,11 @@ const transporter = nodemailer.createTransport({
 
 // Enquiry Submission Route
 app.post('/submit-enquiry', async (req, res) => {
+  console.log("Submit enquiry route called");
+
   try {
     const { name, mobile, email, premises, location, message } = req.body;
-    console.log(name, mobile, email, premises, location, message);
+    // console.log(name, mobile, email, premises, location, message);
     
 
     // Save to MongoDB
@@ -128,3 +130,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = app;
